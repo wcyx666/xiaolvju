@@ -1,0 +1,11 @@
+/* pages/map/map.wxss */
+.text_box {
+  padding: 0 30rpx;
+}
+.city_list {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #efefef;
+  font-size: 28rpx;
+  color: #333;
+  padding-left: 20rpx;
+}

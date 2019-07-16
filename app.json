@@ -1,0 +1,72 @@
+{
+  "pages": [ 
+    "pages/author_details/author_details",
+    "pages/home/home",
+    "pages/smoke_list/smoke_list",
+    "pages/smoke_list_details/smoke_list_details",
+    "pages/deep_cleaning/deep_cleaning",
+    "pages/author_list/author_list",
+    "pages/pay_err/pay_err",
+    "pages/pay_suc/pay_suc",
+    "pages/order/order",
+    "pages/order_pay/order_pay",
+    "pages/order_complete/order_complete",
+    "pages/order_page/order_page",
+    "pages/make_time/make_time",
+    
+    "pages/map/map",
+    "pages/my/my",
+    "pages/login/login",
+    "pages/logs/logs",
+    "pages/coupon/coupon",
+    "pages/smoke/smoke",
+    "pages/canvans/canvans"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#a0a0a0",
+    "selectedColor": "#333",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "pages/image/home.png",
+        "selectedIconPath": "pages/image/home_cor.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "iconPath": "pages/image/order.png",
+        "selectedIconPath": "pages/image/order_cor.png",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "pages/image/my.png",
+        "selectedIconPath": "pages/image/my_cor.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-field": "./dist/field/index",
+    "van-button": "./dist/button/index",
+    "van-tab": "./dist/tab/index",
+    "van-tabs": "./dist/tabs/index",
+    "van-card": "./dist/card/index",
+    "van-submit-bar": "./dist/submit-bar/index",
+    "van-picker": "./dist/picker/index",
+    "van-search": "./dist/search/index",
+    "van-row": "./dist/row/index",
+    "van-col": "./dist/col/index",
+    "van-dialog": "./dist/dialog/index",
+    "van-popup": "./dist/popup/index"
+  }
+}

@@ -1,0 +1,31 @@
+page {
+  height: 100%;
+  background: #efefef;
+}
+.title {
+  font-size: 32rpx;
+  color: #333;
+  padding: 25rpx;
+}
+.section {
+  position:relative;
+  display:-webkit-flex;
+  display:flex;
+  width:100%;
+  padding:10px 15px;
+  font-size:14px;
+  line-height:24px;
+  color:#333;
+  background-color:#fff;
+  box-sizing:border-box;
+}
+.section_title {
+  -webkit-flex:1;
+  flex:1;
+  max-width:90px;
+  min-width:90px;
+}
+.picker {
+  width: 200rpx;
+  flex:1;
+}

@@ -1,0 +1,33 @@
+<!--pages/my/my.wxml-->
+<view class="my">
+  <view class="my_info" wx:if="{{ userInfo != '' }}">
+    <view class="info_phone">
+      {{userInfo.nickName}}
+    </view>
+    <view class="info_img">
+      <image src='{{userInfo.avatarUrl}}'></image>
+    </view>
+  </view>
+  <view class="my_info" wx:else>
+    <view class="info_phone">
+      <button open-type='getUserInfo' bindgetuserinfo="getUserInfo" size="mini" type='primary'>登录</button>
+    </view>
+    <view class="info_img">
+      <image src='../image/user_img.png'></image>
+    </view>
+  </view>
+  <view class="my_list">
+    <view class="my_item" bindtap='bindClickCou'>
+      <image src='../image/icon_agreement.png'></image>
+      <text>优惠券</text>
+    </view>
+    <view class="my_item">
+      <image src='../image/icon_service.png'></image>
+      <text>联系客服</text>
+    </view>
+    <view class="my_item">
+      <image src='../image/icon_agreement.png'></image>
+      <text>用户协议</text>
+    </view>
+  </view>
+</view>

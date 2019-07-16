@@ -1,0 +1,58 @@
+/* pages/coupon/coupon.wxss */
+.coupon {
+  padding: 20rpx;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+.list {
+  width: 100%;
+  height: 285rpx;
+  margin-bottom: 46rpx;
+  color: #fff;
+  position: relative;
+}
+.list image {
+  width: 100%;
+  height: 285rpx;
+}
+.list_box {
+  width: 100%;
+  padding: 40rpx;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  display: flex;
+}
+.title {
+  font-size: 48rpx;
+}
+.date {
+  font-size: 28rpx;
+  margin-top: 10rpx;
+}
+.left {
+  flex: 1;
+}
+.info {
+  position: absolute;
+  bottom: 20rpx;
+  font-size: 26rpx;
+  left: 20%;
+}
+.icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.icon image {
+  width: 139rpx;
+  height: 104rpx;
+}
+.price {
+  font-size: 60rpx;
+}
+.price text {
+  font-size: 38rpx;
+  margin-left: 10rpx;
+}

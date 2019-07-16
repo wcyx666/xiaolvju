@@ -1,0 +1,9 @@
+<!--pages/pay_suc/pay_suc.wxml-->
+<view class="pay_suc">
+  <image src='../image/icon_pay_succeed.png'></image>
+  <view class="suc_title">支付成功</view>
+  <view class="suc_content">稍后客服会和您确认订单</view>
+  <view class="pay_suc_btn" bindtap='bindClickTo'>
+    查看订单
+  </view>
+</view>

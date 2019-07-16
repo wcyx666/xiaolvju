@@ -1,0 +1,27 @@
+/* pages/pay_suc/pay_suc.wxss */
+.pay_suc {
+  padding: 20rpx;
+  text-align: center;
+  font-size: 32rpx;
+}
+.pay_suc image {
+  width: 150rpx;
+  height: 150rpx;
+}
+.suc_title {
+  padding: 20rpx 0;
+}
+.suc_content {
+  color: #999;
+}
+.pay_suc_btn {
+  width: 100%;
+  height: 80rpx;
+  text-align: center;
+  color: #fff;
+  line-height: 80rpx;
+  border-radius: 6rpx;
+  background: #76aef8;
+  margin-top: 30rpx;
+  font-size: 28rpx;
+}

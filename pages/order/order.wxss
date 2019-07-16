@@ -1,0 +1,82 @@
+/* pages/order/order.wxss */
+.order {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+.order_list {
+  background: #fff;
+  width: 100%;
+  padding: 20rpx;
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #333;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.order_title {
+  border-bottom: 1rpx solid #efefef;
+  padding-bottom: 10rpx;
+  display:flex;
+  align-items:center;
+}
+.name {
+  flex: 1;
+}
+.greenCol {
+  color: #36BF11;
+}
+.garyCol {
+  color: #999;
+}
+.redCol {
+  color: #ff0000;
+}
+.order_time {
+  padding: 10rpx 0;
+  display:flex;
+  align-items:center;
+}
+.order_list image {
+  width: 40rpx;
+  height: 40rpx;
+  padding-right: 10rpx;
+}
+.order_city {
+  display:flex;
+  align-items:center;
+}
+.order_btn {
+  float: right;
+  padding-top: 10rpx;
+}
+.order_btn text {
+  padding: 6rpx 40rpx;
+  color: #fff;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+}
+.order_can {
+  background:#ccc;
+}
+.order_pay {
+  background:#ff0000;
+  margin-left: 10rpx;
+}
+.arctive {
+  border-bottom: 1rpx solid red;
+}
+.not {
+  text-align: center;
+  padding-top: 300rpx;
+  color: #999;
+}
+.not view {
+  font-size: 32rpx;
+}
+.not image {
+  width: 347rpx;
+  height: 326rpx;
+  text-align: center;
+}

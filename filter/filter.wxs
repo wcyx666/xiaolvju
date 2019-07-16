@@ -1,0 +1,10 @@
+var Filter = {
+  toFixed:function(val) {
+    var yuan = (val / 100.0)*100;
+    return yuan.toFixed(2);
+  }
+}
+
+module.exports = {
+  toFixed: Filter.toFixed
+}

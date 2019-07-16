@@ -1,0 +1,30 @@
+<!--pages/order/order.wxml-->
+<view class="order">
+  <view class="order_list" wx:for="{{ data }}" wx:if="{{ data.length > 0 }}" data-oid="{{ item.order_oid }}" bindtap='bindTapTo'>
+    <view class="order_title">
+      <image src='../image/icon_name.png'></image>
+      <text class="name">{{ item.comm_type }}</text>
+      <text class="type redCol" wx:if="{{ item.order_type === '1' }}">待付款</text>
+      <text class="type greenCol" wx:if="{{ item.order_type === '2' }}">待完成</text>
+      <text class="type greenCol" wx:if="{{ item.order_type === '3' }}">已完成</text>
+      <text class="type garyCol" wx:if="{{ item.order_type === '4' }}">已取消</text>
+      <text class="type greenCol" wx:if="{{ item.order_type === '6' }}">退款中</text>
+      <text class="type garyCol" wx:if="{{ item.order_type === '7' }}">退款完成</text>
+    </view>
+    <view class="order_time">
+      <image src='../image/icon_time.png'></image>
+      <text>{{ item.make_date }}  {{ item.make_time }}</text>
+    </view>
+    <view class="order_city">
+      <image src='../image/icon_city.png'></image>
+      <text>{{ item.user_addree }}{{ item.user_num }}</text>
+    </view>
+    <view class="order_btn" wx:if="{{ item.order_type === '0' }}">
+      <text class="order_can" catchtap='bindTapCan' data-oid="{{ item.order_oid }}">取消</text>
+      <text class="order_pay" catchtap='bindTapPay' data-oid="{{ item.order_oid }}" data-name="{{ item.comm_type }}" data-price="{{ item.order_price }}">支付</text>
+    </view>
+  </view>
+  <view class="not" wx:if="{{ data.length <= 0 }}">
+    <image src='../image/not_img.png'></image>
+  </view>
+</view>

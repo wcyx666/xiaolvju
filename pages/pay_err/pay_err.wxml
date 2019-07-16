@@ -1,0 +1,9 @@
+<!--pages/pay_suc/pay_suc.wxml-->
+<view class="pay_suc">
+  <image src='../image/icon_pay_err.png'></image>
+  <view class="suc_title">支付失败</view>
+  <view class="suc_content">请重新下单，进行服务</view>
+  <view class="pay_suc_btn" bindtap='bindClickTo'>
+    返回首页
+  </view>
+</view>

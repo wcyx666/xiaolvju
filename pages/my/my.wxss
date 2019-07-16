@@ -1,0 +1,54 @@
+/* pages/my/my.wxss */
+.my {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #efefef;
+}
+.my_info {
+  padding: 30rpx;
+  font-size: 32rpx;
+  background: #fff;
+  overflow: hidden;
+}
+.info_phone {
+  float: left;
+}
+.info_img image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+  float: right;
+}
+.my_list {
+  background: #fff;
+  padding: 0 30rpx;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+}
+.my_item {
+  width: 100%;
+  border-bottom: 1rpx solid #efefef;
+  padding: 30rpx 0;
+  display: flex;
+  align-items: center;
+}
+.my_item image {
+  width: 64rpx;
+  height: 64rpx;
+}
+.my_item text {
+  flex: 1;
+  margin-left: 20rpx;
+}
+.out {
+  width: 90%;
+  height: 80rpx;
+  border:1rpx solid #ccc;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  border-radius: 10rpx;
+  color: #333;
+  margin: 30rpx auto;
+}

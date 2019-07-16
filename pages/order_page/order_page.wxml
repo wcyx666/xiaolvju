@@ -1,0 +1,56 @@
+<!--pages/order_page/order_page.wxml-->
+<wxs module="Filter" src="../../filter/filter.wxs"></wxs>
+<view class="order_page">
+  <view class="order_state list">
+    <text>订单状态</text>
+    <text class="type redCol" wx:if="{{ detailDta.order_type === '0' }}">待支付</text>
+    <text class="type greenCol" wx:if="{{ detailDta.order_type === '1' }}">进行中</text>
+    <text class="type greenCol" wx:if="{{ detailDta.order_type === '2' }}">已完成</text>
+    <text class="type garyCol" wx:if="{{ detailDta.order_type === '3' }}">已取消</text>
+  </view>
+  <view class="order_info list">
+    <view class="order_info_title">订单状态</view>
+    <view class="order_content">
+      <view class="item">
+        <text class="title">订单编号</text>
+        <text class="data">{{ detailDta.order_oid }}</text>
+      </view>
+      <view class="item">
+        <text class="title">服务类型</text>
+        <text class="data">{{ detailDta.comm_type }}</text>
+      </view>
+      <view class="item">
+        <text class="title">下单时间</text>
+        <text class="data">{{ detailDta.place_time }}</text>
+      </view>
+      <view class="item">
+        <text class="title">服务时间</text>
+        <text class="data">{{ detailDta.make_date }}{{ detailDta.make_time }}</text>
+      </view>
+      <view class="item">
+        <text class="title">服务地点</text>
+        <text class="data">{{ detailDta.user_addree }}{{ detailDta.user_num }}</text>
+      </view>
+      <view class="item">
+        <text class="title">联系电话</text>
+        <text class="data">{{ detailDta.user_mobile }}</text>
+      </view>
+    </view>
+  </view>
+  <view class="order_detail list" wx:if="{{ detailDta.order_type != '0' && detailDta.order_type != '3' }}">
+    <view class="order_detail_title">
+      订单明细
+    </view>
+    <view class="order_content">
+      <view class="item">
+        <text class="title">支付方式</text>
+        <text class="data" wx:if="{{ detailDta.play_way === '1' }}">线下支付</text>
+        <text class="data" wx:if="{{ detailDta.play_way === '0' }}">微信支付</text>
+      </view>
+      <view class="item">
+        <text class="title">服务价格</text>
+        <text class="data">{{ Filter.toFixed(detailDta.order_price) }}元</text>
+      </view>
+    </view>
+  </view>
+</view>

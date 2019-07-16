@@ -1,0 +1,40 @@
+/* pages/order_page/order_page.wxss */
+.order_page {
+  width: 100%;
+  height: 100%;
+  background: #efefef;
+  position: absolute;
+  font-size: 28rpx;
+  color: #333;
+}
+.list {
+  background: #fff;
+  margin-top: 10rpx;
+  padding: 20rpx;
+}
+.title {
+  color: #999;
+  width: 100rpx;
+}
+.data {
+  margin-left: 20rpx;
+}
+.order_info_title {
+  padding-bottom: 10rpx;
+  border-bottom: 1rpx solid #efefef;
+}
+.item {
+  padding: 10rpx 0;
+}
+.type {
+  float: right;
+}
+.greenCol {
+  color: #36BF11;
+}
+.garyCol {
+  color: #999;
+}
+.redCol {
+  color: #ff0000;
+}

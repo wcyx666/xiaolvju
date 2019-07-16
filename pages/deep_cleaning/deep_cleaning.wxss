@@ -1,0 +1,78 @@
+/* pages/deep_cleaning/deep_cleaning.wxss */
+.deep {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #f6f7f9;
+  padding: 30rpx;
+  box-sizing:border-box;
+}
+.deep_list_item image {
+  width: 64rpx;
+  height: 64rpx;
+  margin-top: 20rpx;
+}
+.deep_list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content: space-evenly;
+}
+.deep_list_item {
+  width: 200rpx;
+  height: 200rpx;
+  margin-bottom: 20rpx;
+  border:1rpx solid #fbfbfd;
+  background: #fff;
+  border-radius: 10rpx;
+  text-align: center;
+  
+}
+.area {
+  color: #999;
+  font-size: 28rpx;
+  padding: 10rpx 0;
+}
+.name {
+  color: #333;
+  font-size: 32rpx;
+  margin-top: 30rpx;
+}
+.price {
+  color: #f44;
+  font-size: 28rpx;
+}
+.meter_title {
+  font-size: 32rpx;
+  padding-bottom: 30rpx;
+}
+.notice {
+  font-size: 26rpx;
+  color: #7f8085;
+  padding-top: 30rpx;
+  line-height: 48rpx;
+}
+.btn {
+  width: 100%;
+  position: fixed;
+  box-sizing: border-box;
+  background: #fff;
+  left: 0;
+  bottom: 0;
+  padding: 20rpx;
+  border-top: 1rpx solid #efefef;
+}
+.btn_an {
+  width: 100%;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #fff;
+  background: #76aef8;
+}
+
+
+.arcitve {
+  border-color: #f44;
+}

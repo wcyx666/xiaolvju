@@ -1,0 +1,80 @@
+<!--pages/author_details/author_details.wxml-->
+<view class="details">
+  <view class="details_banner">
+    <image src='../image/details_banner.png' style='width:100%;'></image>
+  </view>
+  <view class="details_box">
+    <view class="details_scence">
+      <view class="title">使用场景</view>
+      <view class="content" wx:if="{{ type === '2' }}">
+        <view class="content_j">
+          <view class="content_1">三个月以上或很久未彻底清洁的普通家庭房屋</view>
+          <view class="content_2">出租房回收或入住</view>
+          <view class="content_3">搬家后的房屋</view>
+        </view>
+        <view class="content_t">
+          <view>温馨提示：</view>
+          <view>搬家后产生的大量废旧物品请您提前移除</view>
+        </view>
+      </view>
+      <view class="content" wx:if="{{ type === '1' }}">
+        <view class="content_j">
+          <view class="content_1">清洁室内表面灰尘，卫生间，厨房</view>
+        </view>
+      </view>
+    </view>
+    <view class="details_scence">
+      <view class="title">服务范围</view>
+      <view class="content">
+        <view>彻底清除居室中积累的灰尘、油污、水垢，让您的家焕然一新。对厨卫进行彻底打扫，保护您和家人的健康</view>
+        <view class="content_t">
+          <view>温馨提示：</view>
+          <view>1、室外玻璃不在清洗范围内</view>
+          <view>2、家电、厨电内部清洁不在该清洁范围之内</view>
+          <view>3、古董字画、装饰品、绿植、宠物不在清洁范围</view>
+          <view>4、除厨卫外其他家具仅擦拭表面</view>
+        </view>
+      </view>
+    </view>
+    <view class="details_scence">
+      <view class="title">安全保障</view>
+      <view class="content_anquan">
+        <view class="content_list">
+          <image src='../image/icon_shenfenzheng.png'></image>
+          <text>实名认证</text> 
+        </view>
+        <view class="content_list">
+          <image src='../image/icon_jiankang.png'></image>
+          <text>持有健康证</text> 
+        </view>
+        <view class="content_list"> 
+          <image src='../image/icon_peixun.png'></image>
+          <text>全方位培训</text> 
+        </view>
+      </view>
+    </view>
+    <view class="details_scence">
+      <view class="title">售后保障</view>
+      <view class="content">
+        <view>发现居室、厨房、卫生间等未清除干净，以及保请及时与我们联系。</view>
+      </view>
+    </view>
+    <view class="details_scence">
+      <view class="title">常见问题</view>
+      <view class="content">
+        <view class="problem">问：此服务是否包含吊顶以及家具移位打扫？</view>
+        <view class="answer">答：仅提供室内天花板除尘服务，不包含大件家具移位清理。</view>
+        <view class="problem">问：此服务是否包含灯具清洗？</view>
+        <view class="answer">答：不包含任何灯具清洗，仅针对落地灯、平面吸顶灯表面进行除尘处理。</view>
+        <view class="problem">问：此服务是否包含外窗、纱窗、窗帘、衣物、家电内部的清洗？</view>
+        <view class="answer">答：不包含。</view>      
+      </view>
+    </view>
+    <view style='height:100rpx;'></view>
+  </view>
+  <view class="btn">
+    <view class="btn_an" bindtap='bindToClick'>
+      立即预约
+    </view>
+  </view>
+</view>

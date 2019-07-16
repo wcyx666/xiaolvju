@@ -1,0 +1,61 @@
+<!--pages/home/home.wxml-->
+<view class="home">
+  <!--<view class="home_city">
+    <view class="city">
+      <image src='../image/icon_address.png'></image>
+      大同
+    </view>
+    <view class="attention">
+      添加到我的小程序，下次使用更方便
+      <text class="kailong"></text>
+    </view>
+  </view>-->
+  <view class="swiper">
+    <swiper
+      indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}"
+      interval="{{interval}}"
+      duration="{{duration}}"
+    >
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="activity" bindtap='bingClickCoupon'>
+    <image src='../image/icon_activity.png'></image>
+  </view>
+  <view class="home_other_recommont">
+    <view class="home_other_recommont_title">
+      推荐服务
+    </view>
+    <view class="home_other_content">
+      <view class="home_other_content_list" wx:for="{{ hostList }}" data-type="{{ item.typeIp }}" bindtap='bindClickTo'>
+        <view class="home_other_content_img">
+          <image src='{{ item.img }}'></image>
+        </view>
+        <view class="home_other_content_content">
+          <view class="title">{{ item.title }}</view>
+          <view class="deilt">{{ item.deilt }}</view>
+          <view class="motny"><text>{{ item.motny }}</text>元起</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="coupom" wx:if="{{ couFalut }}">
+  <view class="res">
+    <view class="cou_box" bindtap='bindClickCou'>
+      <image src='../image/cou_img.png'></image>
+    </view>
+    <view class="cou_code" bindtap='bindClickCode'>
+      <image src='../image/icon_code.png'></image>
+    </view>
+  </view>
+</view>
+
+
+

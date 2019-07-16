@@ -1,0 +1,22 @@
+<!--pages/order_pay/order_pay.wxml-->
+<wxs module="Filter" src="../../filter/filter.wxs"></wxs>
+<view class="pay">
+  <view class="pay_img">
+    <image src='../image/wx_pay.png'></image>
+  </view>
+  <view class="pay_box">
+    <view class="pay_order_id">
+      订单编号：{{ order_oid }}
+    </view>
+    <view class="pay_order_id">
+      服务类型：{{ order_name }}
+    </view>
+    <view class="pay_order_id">
+      订单价格：<text>{{ Filter.toFixed(order_price) }}</text>元
+      
+    </view>
+  </view>
+  <view class="pay_btn">
+    确认支付
+  </view>
+</view>

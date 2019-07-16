@@ -1,0 +1,9 @@
+<!--pages/map/map.wxml-->
+<view class="map">
+  <van-search value="{{ value }}" placeholder="请输入搜索" bind:change="bindInput"/>
+</view>
+<view class="text_box">
+  <view class="city_list" bindtap="bindSearch" data-keywords="{{i.name}}" wx:for="{{ tips }}" wx:for-item="i">
+    {{i.name}}
+  </view>
+</view>

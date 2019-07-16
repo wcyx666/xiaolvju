@@ -1,0 +1,48 @@
+<!--pages/deep_cleaning/deep_cleaning.wxml-->
+<view class="deep">
+  <view class="meter_title">
+    房屋类型
+  </view>
+  <view class="deep_list" wx:if="{{ order_type == 1 }}">
+    <view class="{{ type == index?'arcitve':'' }} deep_list_item" wx:for="{{ deep }}" data-index="{{ index }}" data-item="{{ item }}" bindtap='bindClickType'>
+      <view class="name">{{ item.name }}</view>
+      <view class="area">上限{{ item.area }}㎡</view>
+      <view class="price">￥{{ item.price }}</view>
+    </view>
+  </view>
+  <view class="deep_list" wx:if="{{ order_type == 2 }}">
+    <view class="{{ type == index?'arcitve':'' }} deep_list_item" wx:for="{{ deep1 }}" data-index="{{ index }}" data-item="{{ item }}" bindtap='bindClickType'>
+      <view class="name">{{ item.name }}</view>
+      <view class="area">上限{{ item.area }}㎡</view>
+      <view class="price">￥{{ item.price }}</view>
+    </view>
+  </view>
+  <view class="meter" wx:if="{{ type == 5 }}">
+    <view class="meter_title">
+      房屋面积
+    </view>
+    <van-cell-group>
+      <van-field
+        value="{{ value }}"
+        label="面积"
+        type="number"
+        placeholder="精确输入房屋面积"
+        border="{{ false }}"
+        bind:change="onChange"
+      />
+    </van-cell-group>
+  </view>
+  <view class="notice">
+    <view class="notice_title">
+      温馨提示
+    </view>
+    <view class="notice_txt">
+      <view>1.实际费用按照输入面积6元-10元/平米收取费用</view>
+      <view>2.提及面积均指建筑面积（不包括公摊面积），该面积含购房赠送面积</view>
+    </view>
+  </view>
+  
+</view>
+<view class="btn">
+  <view class="btn_an"bindtap='bindClick'>保存</view>
+</view>
