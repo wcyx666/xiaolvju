@@ -1,14 +1,11 @@
-// pages/smoke/smoke.js
+// pages/coupon_use/coupon_use.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    listData: [
-      { "code": "油烟机清洗", "text": "180元" },
-      { "code": "油烟机+灶台清洗", "text": "220元" }
-    ]
+
   },
 
   /**

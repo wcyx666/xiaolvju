@@ -29,6 +29,13 @@ Page({
         title: "深度保洁",
         deilt: "提供新房、长久未打扫家庭室内深度清洁服务",
         motny: 150
+      },
+      {
+        typeIp: "3",
+        img: "../image/img3.png",
+        title: "油烟机",
+        deilt: "提供厨房油烟机清洁服务",
+        motny: 100
       }
     ],
     user_id:"",
@@ -105,9 +112,20 @@ Page({
   },
   bindClickTo (e) {
     let id = e.currentTarget.dataset.type;
-    wx.navigateTo({
-      url: '../author_details/author_details?typeIp='+id,
-    })
+    if ( id == 1 ) {
+      wx.navigateTo({
+        url: '../product_details1/product_details1'
+      })
+    } else if ( id == 2 ) {
+      wx.navigateTo({
+        url: '../product_details2/product_details2'
+      })
+    } else if (id == 3) {
+      wx.navigateTo({
+        url: '../product_details3/product_details3'
+      })
+    }
+    
   },
   //点击获取优惠券
   bindClickCou  () {

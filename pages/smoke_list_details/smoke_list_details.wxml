@@ -64,6 +64,13 @@
         bind:change="onChange"
       />
       <van-field
+        value="{{ comm_type }}"
+        label="类型"
+        readonly="true"
+        border="{{ false }}"
+        bind:change="onChange"
+      />
+      <van-field
         value="￥{{ Filter.toFixed(order_price) }}"
         label="价格"
         readonly="true"
@@ -71,11 +78,10 @@
         bind:change="onChange"
       />
       <van-field
-        value="￥-{{ coupon_price }}"
+        value="-{{ coupon_price }}"
         label="优惠券"
         readonly="true"
         border="{{ false }}"
-        wx:if="{{ coupon_types == 1 }}"
       />
     </van-cell-group>
   </view>

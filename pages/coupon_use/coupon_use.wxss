@@ -1,0 +1,47 @@
+/* pages/coupon_use/coupon_use.wxss */
+.list {
+  position: relative;
+  font-size: 14px;
+  box-sizing: content-box;
+}
+.list image {
+  width: 685rpx;
+  height: 269rpx;
+  text-align: center;
+}
+.list_box {
+  position: absolute;
+  padding: 30rpx;
+  top: 0;
+  left: 40rpx;
+}
+.list_box_top {
+  display: flex;
+  align-items: center;
+}
+.title {
+  color: #1d1d1d;
+}
+.date {
+  color: #666;
+}
+.price {
+  font-size: 24px;
+  color: red;
+  margin-right: 15rpx;
+}
+.btn {
+  width: 150rpx;
+  height: 50rpx;
+  background: #4fa7de;
+  border-radius: 6rpx;
+  font-size: 14px;
+  text-align: center;
+  line-height: 50rpx;
+  color: #fff;
+  margin-left: 90rpx;
+}
+.list_box_bottom {
+  margin-top: 90rpx;
+  color: #999;
+}

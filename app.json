@@ -1,9 +1,8 @@
 {
-  "pages": [ 
-    "pages/author_details/author_details",
-    "pages/home/home",
-    "pages/smoke_list/smoke_list",
+  "pages": [
+    "pages/coupon_use/coupon_use",
     "pages/smoke_list_details/smoke_list_details",
+    "pages/home/home",
     "pages/deep_cleaning/deep_cleaning",
     "pages/author_list/author_list",
     "pages/pay_err/pay_err",
@@ -13,14 +12,14 @@
     "pages/order_complete/order_complete",
     "pages/order_page/order_page",
     "pages/make_time/make_time",
-    
     "pages/map/map",
     "pages/my/my",
     "pages/login/login",
-    "pages/logs/logs",
     "pages/coupon/coupon",
-    "pages/smoke/smoke",
-    "pages/canvans/canvans"
+    "pages/smoke_list/smoke_list",
+    "pages/product_details1/product_details1",
+    "pages/product_details2/product_details2",
+    "pages/product_details3/product_details3"
   ],
   "window": {
     "backgroundTextStyle": "light",

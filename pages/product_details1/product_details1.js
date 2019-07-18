@@ -5,31 +5,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    phoneFalut:true,
-    type:""
+    phoneFalut: true,
+    type: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      type: options.typeIp
-    })
-    if (options.typeIp === '1'){
-      wx.setNavigationBarTitle({
-        title: '日常保洁'
-      })
-    } else {
-      wx.setNavigationBarTitle({
-        title: '深度保洁'
-      })
-    }  
+    
   },
 
-  bindToClick () {
+  bindToClick() {
     wx.navigateTo({
-      url:"/pages/author_list/author_list?type="+this.data.type
+      url: "../deep_cleaning/deep_cleaning?type=1"
     })
   },
 

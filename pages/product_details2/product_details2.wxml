@@ -6,7 +6,7 @@
   <view class="details_box">
     <view class="details_scence">
       <view class="title">使用场景</view>
-      <view class="content" wx:if="{{ type === '2' }}">
+      <view class="content">
         <view class="content_j">
           <view class="content_1">三个月以上或很久未彻底清洁的普通家庭房屋</view>
           <view class="content_2">出租房回收或入住</view>
@@ -15,11 +15,6 @@
         <view class="content_t">
           <view>温馨提示：</view>
           <view>搬家后产生的大量废旧物品请您提前移除</view>
-        </view>
-      </view>
-      <view class="content" wx:if="{{ type === '1' }}">
-        <view class="content_j">
-          <view class="content_1">清洁室内表面灰尘，卫生间，厨房</view>
         </view>
       </view>
     </view>

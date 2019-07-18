@@ -1,0 +1,23 @@
+<!--pages/coupon_use/coupon_use.wxml-->
+<view class="use">
+  <view class="list">
+    <image src='../image/coucom_bg_1.png'></image>
+    <view class="list_box">
+      <view class="list_box_top">
+        <view class="price">
+          30
+        </view>
+        <view class="content">
+          <view class="title">现金卷</view>
+          <view class="date">有效期2019-09-10</view>
+        </view>
+        <view class="btn">
+          立即使用
+        </view>
+      </view>
+      <view class="list_box_bottom">
+        下单折扣30元，限xxxx使用
+      </view>
+    </view>
+  </view>
+</view>

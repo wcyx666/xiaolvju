@@ -1,0 +1,85 @@
+/* pages/author_details/author_details.wxss */
+.details_box {
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.details_scence {
+  border: 1rpx solid #f2f5f7;
+}
+.title {
+  box-sizing: border-box;
+  width: 100%;
+  line-height: 68rpx;
+  font-size: 32rpx;
+  padding-left: 20rpx;
+}
+.content {
+  font-size: 28rpx;
+  padding: 20rpx;
+  color: #333;
+  
+}
+.content_anquan {
+  display: flex;
+  font-size: 28rpx;
+  padding: 20rpx;
+}
+.content_list {
+  flex: 1;
+  text-align: center;
+}
+.content_anquan image {
+  width: 100rpx;
+  height: 100rpx;
+}
+.content_anquan text {
+  display: block;
+  color: #333;
+}
+.content_t {
+  font-size: 24rpx;
+  color: #ccc;
+}
+.btn {
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  border-top: 1rpx solid #efefef;
+}
+.btn_an {
+  width: 100%;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #fff;
+  background:#76aef8;
+}
+.phone {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  background-color:rgba(0,0,0,0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.res {
+  text-align: center;
+}
+.phone image {
+  width: 459rpx;
+  height: 486rpx;
+}
+.cou_code image {
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 20rpx;
+}

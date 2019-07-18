@@ -21,7 +21,7 @@ Page({
     order_name: "",// 产品类型
     order_price: 8000,// 商品原价格
     order_endPrice: "", //商品最终价格
-    comm_type: "日常保洁",// 产品类型
+    comm_type: "",// 产品类型
     coupon_id: "", // 优惠券ID
     coupon_price: 0,// 优惠券价格
     coupon_types: "",// 优惠券类型
@@ -71,9 +71,9 @@ Page({
     let that = this;
     let url = Url.test + "/coupon/ready";
     let openid = user_id;
-    let data = JSON.stringify({
+    let data = {
       user_id: user_id
-    })
+    }
     Http.postRequest(url, data).
       then(res => {
         if (res.data[0].types == 1) {
@@ -194,10 +194,18 @@ Page({
         that.coupon(res.data);
       },
     })
+    console.log(options.type)
+    if (options.type === '2938') {
+      comm_type = '油烟机';
+      price = options.price; // 价格
+    } else if (options.type === '2939') {
+      comm_type = '油烟机+灶台';
+      price = options.price; // 价格
+    }
     that.setData({
       order_name: options.name,
       order_price: options.price,
-      comm_type: options.order_type,
+      comm_type: comm_type
     })
   },
 

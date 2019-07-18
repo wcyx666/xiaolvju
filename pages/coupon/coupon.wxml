@@ -13,7 +13,7 @@
         </view>
       </view>
       <view class="info">
-        下单折扣{{ item.coupon_price }}元，限日常、深度保洁使用
+        下单折扣{{ item.coupon_price }}元，限<text wx:if="{{ item.coupon_cases == 1 }}">日常保洁</text><text wx:if="{{ item.coupon_cases == 2 }}">深度保洁</text><text wx:if="{{ item.coupon_cases == 3 }}">油烟机+灶台</text>使用
       </view>
       <view class="icon" wx:if="{{ item.coupon_types == 3 || item.coupon_types == 2 }}">
         <image src='../image/coupon_lose.png' wx:if="{{ item.coupon_types == 3 }}"></image>

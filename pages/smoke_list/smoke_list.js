@@ -37,7 +37,7 @@ Page({
     }
 
     wx.navigateTo({
-      url: '../smoke_list_details/smoke_list_details?price=' + that.data.order_price + '&name=' + that.data.order_name + '&order_type=' + that.data.order_type,
+      url: '../smoke_list_details/smoke_list_details?price=' + that.data.order_price + '&name=' + that.data.order_name + '&type=' + that.data.order_type,
     })
   },
 
