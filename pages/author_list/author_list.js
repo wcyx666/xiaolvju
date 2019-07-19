@@ -19,12 +19,14 @@ Page({
     play_way:"0",// 支付方式 默认为0
     order_per:"1200",// 房间平米数
     order_name:"",// 产品类型
-    order_price:8000,// 商品原价格
+    order_price:'',// 商品原价格
     order_endPrice:"", //商品最终价格
     comm_type: "日常保洁",// 产品类型
+    coupon_data: "", // 优惠券列表
     coupon_id:"", // 优惠券ID
     coupon_price:0,// 优惠券价格
     coupon_types:"",// 优惠券类型
+    coupon_judge:"", //判断用户是否使用优惠券
   },
 
   bindPickerChange(e) {
@@ -66,22 +68,54 @@ Page({
       url: '../make_time/make_time',
     })
   },
-
-  coupon(user_id) {
+  // 默认使用
+  coupon(user_id, type, cases) {
     let that = this;
-    let url = Url.test + "/coupon/ready/key";
+    let url = Url.test + "/coupon/type";
     let openid = user_id;
     let data = JSON.stringify({
-      user_id: user_id
+      user_id: user_id,
+      coupon_types: type,
+      coupon_cases: cases
     })
     Http.postRequest(url, data).
       then(res => {   
         let row = res.data.data;
-        that.setData({
-          coupon_id: row[0].coupon_id, // 优惠券ID
-          coupon_price: row[0].coupon_price,// 优惠券价格
-          coupon_types: row[0].coupon_types,// 优惠券类型
-        })
+        if ( row.length > 0 ) {
+          that.setData({
+              coupon_data: row, // 优惠券列表
+              coupon_id: row[0].coupon_id, // 优惠券ID
+              coupon_price: row[0].coupon_price,// 优惠券价格
+              coupon_types: row[0].coupon_types,// 优惠券类型
+              order_endPrice: (that.data.order_price - row[0].coupon_price)*100 // 订单价钱
+          })
+        }
+        
+      }).catch((erorr) => {
+        console.log(erorr)
+      })
+      .finally(function (res) {
+        console.log(res)
+      })
+  },
+  // 根据id使用
+  getIdCoupon (id) {
+    let that = this;
+    let url = Url.test + "/coupon/id";
+    let data = JSON.stringify({
+      coupon_id: id,
+    })
+    Http.postRequest(url, data).
+      then(res => {
+        let row = res.data.data;
+        if (row.length > 0) {
+          that.setData({
+            coupon_id: row[0].coupon_id, // 优惠券ID
+            coupon_price: row[0].coupon_price,// 优惠券价格
+            coupon_types: row[0].coupon_types,// 优惠券类型
+            order_endPrice: (that.data.order_price - row[0].coupon_price) * 100 // 订单价钱
+          })
+        }
       }).catch((erorr) => {
         console.log(erorr)
       })
@@ -99,7 +133,7 @@ Page({
         make_time = this.data.make_time,// 预约时间
         play_way = this.data.play_way,// 支付方式 默认为0
         order_per = this.data.order_per,// 房间平米数
-        order_price = this.data.order_price,// 商品原价格
+        order_price = this.data.order_endPrice,// 商品原价格
         comm_type = this.data.comm_type;// 产品类型
     let regexStr = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;
     if (!(user_name)) {
@@ -175,6 +209,12 @@ Page({
       })
   },
 
+  bindClickCoupon () {
+    wx.navigateTo({
+      url: '../coupon_use/coupon_use',
+    })
+  },
+
   
 
   /**
@@ -192,7 +232,7 @@ Page({
         that.setData({
           openid:res.data
         })
-        that.coupon(res.data);
+        that.coupon(res.data, 1, 1);
       },
     })
     if (options.type === '1') {
@@ -206,7 +246,7 @@ Page({
       order_name: options.name,
       comm_type: comm_type,
       order_price: price,
-      order_per: options.val,
+      order_per: options.val
     })
   },
 
@@ -214,11 +254,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    let end = (this.data.order_price - this.data.coupon_price) * 100;
-    console.log(end)
-    this.setData({
-      order_endPrice: end
-    })
+    
   },
 
   /**
@@ -226,6 +262,8 @@ Page({
    */
   onShow: function () {
     let that = this;
+    let coupon_id = wx.getStorageSync('coupon_id')
+    console.log(wx.getStorageSync('no_coupon'))
     wx.getStorage({
       key: 'make',
       success: function(res) {
@@ -237,6 +275,19 @@ Page({
         })
       },
     })
+    if (wx.getStorageSync('no_coupon') == 0) {
+      console.log(123123)
+      that.setData({
+        coupon_judge:0,
+        coupon_id: '', // 优惠券ID
+        coupon_price: '',// 优惠券价格
+        coupon_types: '',// 优惠券类型
+      })
+    }
+
+    that.getIdCoupon(coupon_id);
+    wx.removeStorageSync('coupon_id');
+    wx.removeStorageSync('no_coupon');
   },
 
   /**

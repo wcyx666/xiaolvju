@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/home/home",
     "pages/coupon_use/coupon_use",
     "pages/smoke_list_details/smoke_list_details",
-    "pages/home/home",
     "pages/deep_cleaning/deep_cleaning",
     "pages/author_list/author_list",
     "pages/pay_err/pay_err",

@@ -30,3 +30,28 @@
   width: 200rpx;
   flex:1;
 }
+.coupon {
+  position:relative;
+  display:-webkit-flex;
+  display:flex;
+  align-items: center;
+  width:100%;
+  padding:10px 15px;
+  font-size:14px;
+  line-height:24px;
+  color:#333;
+  background-color:#fff;
+  box-sizing:border-box;
+}
+.coupon_title {
+  max-width:90px;
+  min-width:90px;
+}
+.coupon_price {
+  flex: 1;
+}
+.coupon_return image {
+  width: 34rpx;
+  height: 34rpx;
+  margin-top: 15rpx;
+}

@@ -2,9 +2,14 @@ var Filter = {
   toFixed:function(val) {
     var yuan = (val / 100.0)*100;
     return yuan.toFixed(2);
+  },
+  subString:function (val) {
+    var sub = val.substring(0,10);
+    return sub;
   }
 }
 
 module.exports = {
-  toFixed: Filter.toFixed
+  toFixed: Filter.toFixed,
+  subString: Filter.subString
 }

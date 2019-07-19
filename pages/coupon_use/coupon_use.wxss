@@ -3,6 +3,7 @@
   position: relative;
   font-size: 14px;
   box-sizing: content-box;
+  text-align: center;
 }
 .list image {
   width: 685rpx;
@@ -14,6 +15,7 @@
   padding: 30rpx;
   top: 0;
   left: 40rpx;
+  text-align: left;
 }
 .list_box_top {
   display: flex;
@@ -44,4 +46,15 @@
 .list_box_bottom {
   margin-top: 90rpx;
   color: #999;
+}
+.use_btn {
+  width: 100%;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  background: #ccc;
+  color: #fff;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
 }
