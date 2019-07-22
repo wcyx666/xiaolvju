@@ -16,7 +16,7 @@ Page({
     var myAmapFun = new amapFile.AMapWX({ key: '94ed21456e7bd9449dc1bb49f94c8f20' });
     myAmapFun.getInputtips({
       keywords: keywords,
-      city: '大同',
+      location: '大同',
       success: function (data) {
         console.log(data)
         if (data && data.tips) {
@@ -29,10 +29,11 @@ Page({
     })
   },
   bindSearch: function (e) {
-    var keywords = e.target.dataset.keywords;
-    var url = '../author_list/author_list?keywords=' + keywords;
+    console.log(e)
+    var keywords = e.currentTarget.dataset.keywords;
+    wx.setStorageSync('city', keywords);
     wx.navigateBack({
-      url: url
+      delta:1
     })
   },
 
@@ -40,7 +41,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
+    var keywords = '大同火车站';
+    var myAmapFun = new amapFile.AMapWX({ key: '94ed21456e7bd9449dc1bb49f94c8f20' });
+    myAmapFun.getInputtips({
+      keywords: keywords,
+      location: '大同',
+      success: function (data) {
+        console.log(data)
+        if (data && data.tips) {
+          that.setData({
+            tips: data.tips
+          });
+        }
 
+      }
+    })
   },
 
   /**

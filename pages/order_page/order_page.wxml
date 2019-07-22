@@ -3,10 +3,12 @@
 <view class="order_page">
   <view class="order_state list">
     <text>订单状态</text>
-    <text class="type redCol" wx:if="{{ detailDta.order_type === '0' }}">待支付</text>
-    <text class="type greenCol" wx:if="{{ detailDta.order_type === '1' }}">进行中</text>
-    <text class="type greenCol" wx:if="{{ detailDta.order_type === '2' }}">已完成</text>
-    <text class="type garyCol" wx:if="{{ detailDta.order_type === '3' }}">已取消</text>
+    <text class="type redCol" wx:if="{{ detailDta.order_type === '1' }}">待付款</text>
+    <text class="type greenCol" wx:if="{{ detailDta.order_type === '2' }}">待完成</text>
+    <text class="type greenCol" wx:if="{{ detailDta.order_type === '3' }}">已完成</text>
+    <text class="type garyCol" wx:if="{{ detailDta.order_type === '4' }}">已取消</text>
+    <text class="type greenCol" wx:if="{{ detailDta.order_type === '6' }}">退款中</text>
+    <text class="type garyCol" wx:if="{{ detailDta.order_type === '7' }}">退款完成</text>
   </view>
   <view class="order_info list">
     <view class="order_info_title">订单状态</view>

@@ -50,7 +50,7 @@ Page({
   },
 
   bindClickOn () {
-    wx.setStorageSync('no_coupon', 0);
+    wx.setStorageSync('coupon_id', '1');
     wx.navigateBack({
       delta: 1
     })

@@ -1,9 +1,13 @@
 <!--pages/map/map.wxml-->
 <view class="map">
-  <van-search value="{{ value }}" placeholder="请输入搜索" bind:change="bindInput"/>
+  <van-search value="{{ value }}" placeholder="请输入小区" bind:change="bindInput"/>
 </view>
 <view class="text_box">
   <view class="city_list" bindtap="bindSearch" data-keywords="{{i.name}}" wx:for="{{ tips }}" wx:for-item="i">
-    {{i.name}}
+    <view class="city_left">
+      <view>{{ i.name }}</view>
+      <view>{{ i.address }}</view>
+    </view>
+    <image src='../image/icon_retrun.png' class="city_right"></image>
   </view>
 </view>

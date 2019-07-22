@@ -37,6 +37,10 @@
   width: 64rpx;
   height: 64rpx;
 }
+.my_item .go {
+  width: 40rpx;
+  height: 40rpx;
+}
 .my_item text {
   flex: 1;
   margin-left: 20rpx;

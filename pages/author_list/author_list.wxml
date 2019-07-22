@@ -24,7 +24,7 @@
         label="小区地址"
         placeholder="请输入小区地址"
         border="{{ false }}"
-        bind:change="onChangeCity"
+        bindtap="onChangeCity"
       />
       <van-field
         value="{{ user_num }}"
@@ -87,7 +87,7 @@
     </view>
     <view class="coupon" bindtap='bindClickCoupon' wx:else>
       <view class="coupon_title">优惠券</view>
-      <view class="coupon_price" wx:if="{{ coupon_judge == 0 }}">不使用优惠券</view>
+      <view class="coupon_price" wx:if="{{ coupon_judge === '2' }}">暂不使用优惠券</view>
       <view class="coupon_price" wx:else>-{{ coupon_price }}元</view> 
       <view class="coupon_return">
         <image src='../image/icon_retrun.png'></image>

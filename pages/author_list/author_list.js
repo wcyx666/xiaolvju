@@ -19,6 +19,7 @@ Page({
     play_way:"0",// 支付方式 默认为0
     order_per:"1200",// 房间平米数
     order_name:"",// 产品类型
+    order_sum_price: '',// 商品原价格
     order_price:'',// 商品原价格
     order_endPrice:"", //商品最终价格
     comm_type: "日常保洁",// 产品类型
@@ -26,7 +27,7 @@ Page({
     coupon_id:"", // 优惠券ID
     coupon_price:0,// 优惠券价格
     coupon_types:"",// 优惠券类型
-    coupon_judge:"", //判断用户是否使用优惠券
+    coupon_judge:"1", //判断用户是否使用优惠券
   },
 
   bindPickerChange(e) {
@@ -47,8 +48,8 @@ Page({
     })
   },
   onChangeCity(e) {
-    this.setData({
-      user_city: e.detail
+    wx.navigateTo({
+      url: '../map/map',
     })
   },
   onChangeNum(e) {
@@ -109,11 +110,23 @@ Page({
       then(res => {
         let row = res.data.data;
         if (row.length > 0) {
+          console.log("使用优惠券")
           that.setData({
             coupon_id: row[0].coupon_id, // 优惠券ID
             coupon_price: row[0].coupon_price,// 优惠券价格
             coupon_types: row[0].coupon_types,// 优惠券类型
-            order_endPrice: (that.data.order_price - row[0].coupon_price) * 100 // 订单价钱
+            order_endPrice: (that.data.order_price - row[0].coupon_price) * 100, // 订单价钱
+            coupon_judge: '1',
+          })
+        } else {
+          console.log("不使用优惠券")
+          console.log(that.data.order_price)
+          that.setData({
+            coupon_id: '', // 优惠券ID
+            coupon_price: '',// 优惠券价格
+            coupon_types: '',// 优惠券类型
+            coupon_judge:'2',// 判断是否使用优惠券
+            order_endPrice: (that.data.order_price - 0) * 100 // 订单价钱
           })
         }
       }).catch((erorr) => {
@@ -262,8 +275,9 @@ Page({
    */
   onShow: function () {
     let that = this;
-    let coupon_id = wx.getStorageSync('coupon_id')
-    console.log(wx.getStorageSync('no_coupon'))
+    let coupon_id = wx.getStorageSync('coupon_id');
+    let user_city = wx.getStorageSync('city');
+    console.log(user_city)
     wx.getStorage({
       key: 'make',
       success: function(res) {
@@ -275,19 +289,23 @@ Page({
         })
       },
     })
-    if (wx.getStorageSync('no_coupon') == 0) {
-      console.log(123123)
-      that.setData({
-        coupon_judge:0,
-        coupon_id: '', // 优惠券ID
-        coupon_price: '',// 优惠券价格
-        coupon_types: '',// 优惠券类型
-      })
+    if (wx.getStorageSync('coupon_id')) {
+      that.getIdCoupon(coupon_id);
     }
-
-    that.getIdCoupon(coupon_id);
+    that.setData({
+      user_city: user_city // 小区地址
+    })
     wx.removeStorageSync('coupon_id');
-    wx.removeStorageSync('no_coupon');
+    wx.removeStorageSync('city');
+    wx.removeStorage({
+      key: 'make',
+      success: function(res) {
+        console.log("删除成功")
+      },
+    })
+    
+    
+    //wx.removeStorageSync('no_coupon');
   },
 
   /**

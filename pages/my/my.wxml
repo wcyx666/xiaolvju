@@ -18,16 +18,19 @@
   </view>
   <view class="my_list">
     <view class="my_item" bindtap='bindClickCou'>
-      <image src='../image/icon_agreement.png'></image>
+      <image src='../image/icon_coupon.png'></image>
       <text>优惠券</text>
+      <image src='../image/icon_retrun.png' class="go"></image>
     </view>
     <view class="my_item">
       <image src='../image/icon_service.png'></image>
       <text>联系客服</text>
+      <image src='../image/icon_retrun.png' class="go"></image>
     </view>
     <view class="my_item">
       <image src='../image/icon_agreement.png'></image>
       <text>用户协议</text>
+      <image src='../image/icon_retrun.png' class="go"></image>
     </view>
   </view>
 </view>

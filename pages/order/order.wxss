@@ -4,6 +4,7 @@
   height: 100%;
   position: relative;
   box-sizing: border-box;
+  background: #efefef;
 }
 .order_list {
   background: #fff;

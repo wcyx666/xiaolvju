@@ -3,9 +3,18 @@
   padding: 0 30rpx;
 }
 .city_list {
+  display: flex;
   padding: 20rpx 0;
   border-bottom: 1rpx solid #efefef;
   font-size: 28rpx;
   color: #333;
   padding-left: 20rpx;
+  align-items: center;
+}
+.city_right {
+  width: 40rpx;
+  height: 40rpx;
+}
+.city_left {
+  flex: 1;
 }
