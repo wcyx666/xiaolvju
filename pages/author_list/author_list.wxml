@@ -78,7 +78,7 @@
         bind:change="onChange"
       />
     </van-cell-group>
-    <view class="coupon" wx:if="{{ coupon_data.length < 0 }}">
+    <view class="coupon" wx:if="{{ coupon_data.length <= 0 }}">
       <view class="coupon_title">优惠券</view>
       <view class="coupon_price">没有优惠券</view>
       <view class="coupon_return">

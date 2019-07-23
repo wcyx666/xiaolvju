@@ -90,6 +90,13 @@ Page({
               coupon_types: row[0].coupon_types,// 优惠券类型
               order_endPrice: (that.data.order_price - row[0].coupon_price)*100 // 订单价钱
           })
+        } else {
+          that.setData({
+            coupon_id: '', // 优惠券ID
+            coupon_price: '',// 优惠券价格
+            coupon_types: '',// 优惠券类型
+            order_endPrice: (that.data.order_price - 0) * 100 // 订单价钱
+          })
         }
         
       }).catch((erorr) => {
@@ -245,15 +252,21 @@ Page({
         that.setData({
           openid:res.data
         })
-        that.coupon(res.data, 1, 1);
+        that.coupon(res.data, options.type, 1);
       },
     })
     if (options.type === '1') {
       comm_type = '日常保洁';
       price = options.price; // 价格
-    } else {
+    } else if (options.type === '2') {
       price = options.price;
       comm_type = '深度保洁';
+    } else if (options.type === '2939') {
+      price = options.price;
+      comm_type = '油烟机+灶台';
+    } else if (options.type === '2938') {
+      price = options.price;
+      comm_type = '油烟机';
     }
     that.setData({
       order_name: options.name,

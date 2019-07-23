@@ -24,9 +24,6 @@
       </block>
     </swiper>
   </view>
-  <view class="activity" bindtap='bingClickCoupon'>
-    <image src='../image/icon_activity.png'></image>
-  </view>
   <view class="home_other_recommont">
     <view class="home_other_recommont_title">
       推荐服务
