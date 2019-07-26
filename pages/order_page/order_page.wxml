@@ -39,7 +39,7 @@
       </view>
     </view>
   </view>
-  <view class="order_detail list" wx:if="{{ detailDta.order_type != '0' && detailDta.order_type != '3' }}">
+  <view class="order_detail list">
     <view class="order_detail_title">
       订单明细
     </view>
@@ -51,7 +51,7 @@
       </view>
       <view class="item">
         <text class="title">服务价格</text>
-        <text class="data">{{ Filter.toFixed(detailDta.order_price) }}元</text>
+        <text class="data">{{ Filter.toFixedT(detailDta.order_price) }}元</text>
       </view>
     </view>
   </view>

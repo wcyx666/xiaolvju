@@ -22,6 +22,7 @@ Page({
     order_sum_price: '',// 商品原价格
     order_price:'',// 商品原价格
     order_endPrice:"", //商品最终价格
+    order_type: "",// 产品类型
     comm_type: "日常保洁",// 产品类型
     coupon_data: "", // 优惠券列表
     coupon_id:"", // 优惠券ID
@@ -231,7 +232,7 @@ Page({
 
   bindClickCoupon () {
     wx.navigateTo({
-      url: '../coupon_use/coupon_use',
+      url: '../coupon_use/coupon_use?type=' + this.data.order_type,
     })
   },
 
@@ -252,7 +253,7 @@ Page({
         that.setData({
           openid:res.data
         })
-        that.coupon(res.data, options.type, 1);
+        that.coupon(res.data, 1, options.type)
       },
     })
     if (options.type === '1') {
@@ -272,7 +273,8 @@ Page({
       order_name: options.name,
       comm_type: comm_type,
       order_price: price,
-      order_per: options.val
+      order_per: options.val || '',
+      order_type: options.type
     })
   },
 
@@ -289,8 +291,6 @@ Page({
   onShow: function () {
     let that = this;
     let coupon_id = wx.getStorageSync('coupon_id');
-    let user_city = wx.getStorageSync('city');
-    console.log(user_city)
     wx.getStorage({
       key: 'make',
       success: function(res) {
@@ -305,20 +305,20 @@ Page({
     if (wx.getStorageSync('coupon_id')) {
       that.getIdCoupon(coupon_id);
     }
-    that.setData({
-      user_city: user_city // 小区地址
-    })
+    if (wx.getStorageSync('city')) {
+      let user_city = wx.getStorageSync('city');
+      that.setData({
+        user_city: user_city // 小区地址
+      })
+    }
     wx.removeStorageSync('coupon_id');
-    wx.removeStorageSync('city');
     wx.removeStorage({
       key: 'make',
       success: function(res) {
         console.log("删除成功")
       },
     })
-    
-    
-    //wx.removeStorageSync('no_coupon');
+    wx.removeStorageSync('city');
   },
 
   /**

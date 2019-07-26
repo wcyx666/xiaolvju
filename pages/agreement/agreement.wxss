@@ -1,0 +1,9 @@
+/* pages/agreement/agreement.wxss */
+.agreement {
+  font-size: 32rpx;
+  padding: 20rpx;
+}
+.title {
+  padding: 20rpx 0;
+  font-weight: bold;
+}

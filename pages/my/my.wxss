@@ -12,19 +12,20 @@
   overflow: hidden;
 }
 .info_phone {
+  width: 200rpx;
   float: left;
 }
 .info_img image {
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 100rpx;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 130rpx;
   float: right;
 }
 .my_list {
   background: #fff;
   padding: 0 30rpx;
   margin-top: 20rpx;
-  font-size: 28rpx;
+  font-size: 32rpx;
 }
 .my_item {
   width: 100%;

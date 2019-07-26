@@ -1,6 +1,6 @@
 <!--pages/order/order.wxml-->
-<view class="order">
-  <view class="order_list" wx:for="{{ data }}" wx:if="{{ data.length > 0 }}" data-oid="{{ item.order_oid }}" bindtap='bindTapTo'>
+<view class="order" wx:if="{{ data.length > 0 }}">
+  <view class="order_list" wx:for="{{ data }}" data-oid="{{ item.order_oid }}" bindtap='bindTapTo'>
     <view class="order_title">
       <image src='../image/icon_name.png'></image>
       <text class="name">{{ item.comm_type }}</text>
@@ -24,7 +24,7 @@
       <text class="order_pay" catchtap='bindTapPay' data-oid="{{ item.order_oid }}" data-name="{{ item.comm_type }}" data-price="{{ item.order_price }}">支付</text>
     </view>
   </view>
-  <view class="not" wx:if="{{ data.length <= 0 }}">
-    <image src='../image/not_img.png'></image>
-  </view>
+</view>
+<view class="not" wx:if="{{ data.length < 0 }}">
+    <image src='../image/not_order_img.jpg'></image>
 </view>

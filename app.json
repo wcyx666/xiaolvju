@@ -1,13 +1,15 @@
 {
   "pages": [
+    "pages/order/order",
     "pages/home/home",
     "pages/coupon_use/coupon_use",
+    "pages/coupon/coupon",
     "pages/smoke_list_details/smoke_list_details",
     "pages/deep_cleaning/deep_cleaning",
     "pages/author_list/author_list",
     "pages/pay_err/pay_err",
     "pages/pay_suc/pay_suc",
-    "pages/order/order",
+    
     "pages/order_pay/order_pay",
     "pages/order_complete/order_complete",
     "pages/order_page/order_page",
@@ -15,17 +17,20 @@
     "pages/map/map",
     "pages/my/my",
     "pages/login/login",
-    "pages/coupon/coupon",
+    
     "pages/smoke_list/smoke_list",
     "pages/product_details1/product_details1",
     "pages/product_details2/product_details2",
-    "pages/product_details3/product_details3"
+    "pages/product_details3/product_details3",
+    "pages/agreement/agreement"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#a0a0a0",

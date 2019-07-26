@@ -21,6 +21,7 @@
   padding-bottom: 10rpx;
   display:flex;
   align-items:center;
+  font-size: 32rpx;
 }
 .name {
   flex: 1;
@@ -35,9 +36,11 @@
   color: #ff0000;
 }
 .order_time {
-  padding: 10rpx 0;
+  padding: 15rpx 0;
   display:flex;
   align-items:center;
+  color: #999;
+  font-size: 28rpx;
 }
 .order_list image {
   width: 40rpx;
@@ -47,6 +50,7 @@
 .order_city {
   display:flex;
   align-items:center;
+  color: #999;
 }
 .order_btn {
   float: right;
@@ -69,15 +73,15 @@
   border-bottom: 1rpx solid red;
 }
 .not {
-  text-align: center;
-  padding-top: 300rpx;
+  width: 100%;
+  height: 100%;
   color: #999;
-}
-.not view {
-  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
 }
 .not image {
-  width: 347rpx;
-  height: 326rpx;
-  text-align: center;
+  width: 324rpx;
+  height: 381rpx;
 }

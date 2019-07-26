@@ -1,6 +1,6 @@
 <!--pages/coupon_use/coupon_use.wxml-->
 <wxs module="Filter" src="../../filter/filter.wxs"></wxs>
-<view class="use">
+<view class="use" wx:if="{{ couData.length > 0 }}">
   <view class="list" wx:for="{{ couData }}">
     <image src='../image/coucom_bg_1.png'></image>
     <view class="list_box">
@@ -17,11 +17,14 @@
         </view>
       </view>
       <view class="list_box_bottom">
-        下单折扣{{ item.coupon_price }}元，限限<text wx:if="{{ item.coupon_cases == 1 }}">日常保洁</text><text wx:if="{{ item.coupon_cases == 2 }}">深度保洁</text><text wx:if="{{ item.coupon_cases == 3 }}">油烟机+灶台</text>使用
+        下单折扣{{ item.coupon_price }}元，限<text wx:if="{{ item.coupon_cases == 1 }}">日常保洁</text><text wx:if="{{ item.coupon_cases == 2 }}">深度保洁</text><text wx:if="{{ item.coupon_cases == 2939 }}">油烟机+灶台</text><text wx:if="{{ item.coupon_cases == 2938 }}">油烟机</text>使用
       </view>
     </view>
   </view>
   <view class="use_btn" bindtap='bindClickOn'>
     不使用优惠券
   </view>
+</view>
+<view class="not" wx:if="{{ couData.length < 0 }}">
+    <image src='../image/not_order_img.jpg'></image>
 </view>

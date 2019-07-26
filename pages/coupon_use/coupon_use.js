@@ -21,8 +21,11 @@ Page({
         that.setData({
           user_id: res.data
         })
-        that.getCou(res.data,1,1)
+        that.getCou(res.data,1 , options.type )
       },
+    })
+    wx.showLoading({
+      title: '加载中',
     })
   },
 
@@ -40,6 +43,7 @@ Page({
         that.setData({
           couData: res.data.data
         })
+        wx.hideLoading();
         console.log(res.data.data)
       }).catch((erorr) => {
         console.log(erorr)

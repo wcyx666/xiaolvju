@@ -37,6 +37,10 @@
   width: 100%;
   height: 273rpx;
 }
+.swiper swiper {
+  width: 100%;
+  height: 100%;
+}
 .swiper image {
   width: 100%;
   height: 273rpx;
@@ -50,7 +54,8 @@
   height: 224rpx;
 }
 .home_other_recommont_title {
-  padding: 30rpx 0;
+  padding-bottom: 30rpx;
+  padding-top: 50rpx;
 }
 .home_other_content_list {
   display: -webkit-flex;
@@ -106,4 +111,7 @@
   width: 60rpx;
   height: 60rpx;
   margin-top: 20rpx;
+}
+.title {
+  font-size: 34rpx;
 }

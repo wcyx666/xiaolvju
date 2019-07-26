@@ -13,7 +13,12 @@ Page({
     currenTime: "",
     currentIndex:0,
     currentTimeIndex: '',
-    timeArr: [{ "make_time": "08:00-10:00" }, { "make_time": "10:00-12:00" }, { "make_time": "13:00-15:00" }, { "make_time": "15:00-17:00" }]
+    timeArr: [
+      { "make_time": "08:00-10:00", 'make_num': "0" },
+      { "make_time": "10:00-12:00", 'make_num': "0" },
+      { "make_time": "13:00-15:00", 'make_num': "0" },
+      { "make_time": "15:00-17:00", 'make_num': "0" }
+    ]
   },
 
   /**
@@ -80,10 +85,10 @@ Page({
               }
             }
           }
-        }
-        that.setData({
-          timeArr: timeArr
-        })
+          that.setData({
+            timeArr: timeArr
+          })
+        }   
         console.log(timeArr)
       }).catch((erorr) => {
         console.log(erorr)

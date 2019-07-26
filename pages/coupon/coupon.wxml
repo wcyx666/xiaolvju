@@ -1,19 +1,21 @@
 <!--pages/coupon/coupon.wxml-->
-<view class="coupon">
+<wxs module="Filter" src="../../filter/filter.wxs"></wxs>
+<view class="coupon" wx:if="{{ couData.length > 0 }}">
   <view class="coupon_list">
     <view class="list" wx:for="{{ couData }}">
-      <image src='../image/coucom_bg.png'></image>
+      <image src='../image/coucom_bg.png' wx:if="{{ item.coupon_types == 1 }}"></image>
+      <image src='../image/coucom_bg_cor.png' wx:if="{{ item.coupon_types == 2 }}"></image>
       <view class="list_box">
         <view class="left">
           <view class="title">现金券</view>
-          <view class="date">有效期至<text>{{ item.coupon_useful_date }}</text></view>
+          <view class="date">有效期至<text>{{ Filter.subString(item.coupon_useful_date) }}</text></view>
         </view>
         <view class="right">
           <view class="price">{{ item.coupon_price }}<text>元</text></view>
         </view>
       </view>
       <view class="info">
-        下单折扣{{ item.coupon_price }}元，限<text wx:if="{{ item.coupon_cases == 1 }}">日常保洁</text><text wx:if="{{ item.coupon_cases == 2 }}">深度保洁</text><text wx:if="{{ item.coupon_cases == 3 }}">油烟机+灶台</text>使用
+        下单折扣{{ item.coupon_price }}元，限<text wx:if="{{ item.coupon_cases == 1 }}">日常保洁</text><text wx:if="{{ item.coupon_cases == 2 }}">深度保洁</text><text wx:if="{{ item.coupon_cases == 2939 }}">油烟机+灶台</text><text wx:if="{{ item.coupon_cases == 2938 }}">油烟机</text>使用
       </view>
       <view class="icon" wx:if="{{ item.coupon_types == 3 || item.coupon_types == 2 }}">
         <image src='../image/coupon_lose.png' wx:if="{{ item.coupon_types == 3 }}"></image>
@@ -23,4 +25,8 @@
     </view>
   </view>
   
+</view>
+
+<view class="not" wx:if="{{ couData.length < 0 }}">
+    <image src='../image/not_coupon_img.jpg'></image>
 </view>

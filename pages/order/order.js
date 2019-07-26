@@ -23,9 +23,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(0)
-   
-    
+    wx.showLoading({
+      title: '加载中',
+    }) 
+    let that = this;
+    wx.getStorage({
+      key: 'openid',
+      success: function (res) {
+        that.getOrderList(res.data);
+        that.setData({
+          openid: res.data
+        })
+      },
+    })
   },
 
   getOrderList(openid) {
@@ -39,6 +49,7 @@ Page({
         that.setData({
           data: res.data
         })
+        wx.hideLoading();
         console.log(res)
       }).catch((erorr) => {
         console.log(erorr)
@@ -88,6 +99,7 @@ Page({
                     that.getOrderList(that.data.openid);
                   }
                 })
+                wx.hideLoading();
               }
             }).catch((erorr) => {
               wx.showToast({
@@ -126,16 +138,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    let that = this;
-    wx.getStorage({
-      key: 'openid',
-      success: function (res) {
-        that.getOrderList(res.data);
-        that.setData({
-          openid: res.data
-        })
-      },
-    })
+    
   },
 
   /**
@@ -156,7 +159,12 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    wx.showNavigationBarLoading();  //在标题栏中显示加载
+    this.getOrderList(this.data.openid);
+    setTimeout(function () {
+      wx.hideNavigationBarLoading(); //完成停止加载
+      wx.stopPullDownRefresh(); //停止下拉刷新
+　　 }, 1000);
   },
 
   /**

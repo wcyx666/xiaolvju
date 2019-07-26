@@ -8,11 +8,13 @@ Page({
    */
   data: {
     imgUrls:[
-      '../image/banner3.png'
+      { path: '../image/289.jpg', type: 1 },
+      { path: '../image/300.jpg', type: 2 },
     ],
     couFalut: 'true',
-    indicatorDots: false,
-    autoplay: false,
+    indicatorDots: true,
+    autoplay: true,
+    circular:true,
     interval: 5000,
     duration: 1000,
     hostList:[
@@ -176,5 +178,18 @@ Page({
     this.setData({
       couFalut:false
     })
+  },
+  bindClickRouter(data) {
+    let type = data.currentTarget.dataset.type;
+    if (type == 1) {
+      wx.navigateTo({
+        url: '../product_details1/product_details1',
+      })
+    } else if (type == 2) {
+      wx.navigateTo({
+        url: '../product_details2/product_details2',
+      })
+    }
+    
   }
 })

@@ -80,7 +80,7 @@
     </van-cell-group>
     <view class="coupon" wx:if="{{ coupon_data.length <= 0 }}">
       <view class="coupon_title">优惠券</view>
-      <view class="coupon_price">没有优惠券</view>
+      <view class="coupon_price">无可用优惠券</view>
       <view class="coupon_return">
         <image src='../image/icon_retrun.png'></image>
       </view>

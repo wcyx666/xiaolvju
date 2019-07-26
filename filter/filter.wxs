@@ -6,10 +6,15 @@ var Filter = {
   subString:function (val) {
     var sub = val.substring(0,10);
     return sub;
-  }
+  },
+  toFixedT: function (val) {
+    var yuan = val / 100.0;
+    return yuan.toFixed(2);
+  },
 }
 
 module.exports = {
   toFixed: Filter.toFixed,
-  subString: Filter.subString
+  subString: Filter.subString,
+  toFixedT: Filter.toFixedT,
 }

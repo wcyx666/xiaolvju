@@ -10,7 +10,7 @@
   </view>
   <view class="my_info" wx:else>
     <view class="info_phone">
-      <button open-type='getUserInfo' bindgetuserinfo="getUserInfo" size="mini" type='primary'>登录</button>
+      <button open-type='getUserInfo' bindgetuserinfo="getUserInfo" size="default" type='primary'>登录</button>
     </view>
     <view class="info_img">
       <image src='../image/user_img.png'></image>
@@ -27,7 +27,7 @@
       <text>联系客服</text>
       <image src='../image/icon_retrun.png' class="go"></image>
     </view>
-    <view class="my_item">
+    <view class="my_item" bindtap='bindClickAree'>
       <image src='../image/icon_agreement.png'></image>
       <text>用户协议</text>
       <image src='../image/icon_retrun.png' class="go"></image>
