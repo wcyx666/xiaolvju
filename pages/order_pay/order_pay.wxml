@@ -13,7 +13,6 @@
     </view>
     <view class="pay_order_id">
       订单价格：<text>{{ Filter.toFixedT(order_price) }}</text>元
-      
     </view>
   </view>
   <view class="pay_btn">

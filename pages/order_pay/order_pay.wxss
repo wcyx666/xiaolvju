@@ -30,7 +30,7 @@
   color: #fff;
   line-height: 80rpx;
   border-radius: 6rpx;
-  background: #76aef8;
+  background: #07c160;
   margin-top: 30rpx;
   font-size: 28rpx;
 }

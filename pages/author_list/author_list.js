@@ -83,16 +83,19 @@ Page({
     Http.postRequest(url, data).
       then(res => {   
         let row = res.data.data;
+        console.log(row)
         if ( row.length > 0 ) {
           that.setData({
               coupon_data: row, // 优惠券列表
               coupon_id: row[0].coupon_id, // 优惠券ID
               coupon_price: row[0].coupon_price,// 优惠券价格
               coupon_types: row[0].coupon_types,// 优惠券类型
-              order_endPrice: (that.data.order_price - row[0].coupon_price)*100 // 订单价钱
+              order_endPrice: (that.data.order_price - row[0].coupon_price)*100, // 订单价钱
+              coupon_judge: '1',
           })
         } else {
           that.setData({
+            coupon_data: row,
             coupon_id: '', // 优惠券ID
             coupon_price: '',// 优惠券价格
             coupon_types: '',// 优惠券类型
@@ -154,7 +157,7 @@ Page({
         make_time = this.data.make_time,// 预约时间
         play_way = this.data.play_way,// 支付方式 默认为0
         order_per = this.data.order_per,// 房间平米数
-        order_price = this.data.order_endPrice,// 商品原价格
+        order_endPrice = this.data.order_endPrice,// 商品原价格
         comm_type = this.data.comm_type;// 产品类型
     let regexStr = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;
     if (!(user_name)) {
@@ -205,14 +208,22 @@ Page({
       play_way: this.data.play_way,// 支付方式 默认为0
       order_name: this.data.order_name,// 商品名称
       order_per: this.data.order_per,// 房间平米数
-      order_price: this.data.order_endPrice,// 商品原价格
+      order_price: this.data.order_price,// 商品原价
+      order_endPrice: this.data.order_endPrice,// 商品原价格
       comm_type: this.data.comm_type,// 产品类型
-      coupon_id: this.data.coupon_id// 优惠券ID
+      coupon_id: this.data.coupon_id,// 优惠券ID
+      coupon_price: this.data.coupon_price// 优惠券价格
     }
     console.log(data)
     Http.postRequest(url, data).
       then(res => {
         console.log(res);
+        if (res.data.code == 3) {
+          wx.showToast({
+            title: '优惠券已经使用',
+          })
+          return;
+        }
         if ( res.data.type === '1' ){
           wx.navigateTo({
             url: '../pay_suc/pay_suc?oid=' + res.data.orderId + '&name=' + res.data.name + '&price=' + res.data.price,
@@ -253,7 +264,7 @@ Page({
         that.setData({
           openid:res.data
         })
-        that.coupon(res.data, 1, options.type)
+        that.coupon(res.data, 1, options.type);
       },
     })
     if (options.type === '1') {
@@ -288,7 +299,8 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function (options) {
+    console.log(options)
     let that = this;
     let coupon_id = wx.getStorageSync('coupon_id');
     wx.getStorage({

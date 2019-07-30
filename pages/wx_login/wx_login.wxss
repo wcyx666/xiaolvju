@@ -1,0 +1,35 @@
+/* pages/wx_login/wx_login.wxss */
+.btn1 {
+  width: 80%;
+  margin-top: 20rpx;
+  background-color: #07c160;
+  color: white;
+  border-radius: 98rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnImg {
+  margin-right: 8rpx;
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.btn1::after {
+  border-radius: 98rpx;
+  border: 0; 
+}
+.agreement {
+  width: 100%;
+  text-align: center;
+  font-size: 32rpx;
+  color: #999;
+  position: absolute;
+  bottom: 30rpx;
+}
+.agreement navigator {
+  color: red;
+  display: inline-block;
+}

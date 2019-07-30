@@ -55,19 +55,24 @@
 .order_btn {
   float: right;
   padding-top: 10rpx;
+  display: flex;
 }
-.order_btn text {
-  padding: 6rpx 40rpx;
-  color: #fff;
+.order_btn view {
+  width: 140rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 60rpx;
   border-radius: 10rpx;
-  font-size: 24rpx;
 }
 .order_can {
-  background:#ccc;
+  color: #ccc;
+  border:1rpx solid #ccc;
+  margin-right: 20rpx;
 }
 .order_pay {
-  background:#ff0000;
-  margin-left: 10rpx;
+  color: #ff0000;
+  border:1rpx solid #ff0000;
 }
 .arctive {
   border-bottom: 1rpx solid red;

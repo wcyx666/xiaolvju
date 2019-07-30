@@ -78,7 +78,9 @@ Page({
   bindTapCan (e) {
     console.log(e);
     let that = this;
+    coupon
     let oid = e.currentTarget.dataset.oid;
+    let coupon = e.currentTarget.dataset.coupon;
     wx.showModal({
       title: '提示',
       content: '是否确认取消订单',
@@ -86,7 +88,8 @@ Page({
         if (res.confirm) {
           let url = Url.test + "/order/cancel";
           let data = JSON.stringify({
-            order_oid: oid
+            order_oid: oid,
+            coupon_id: coupon
           })
           Http.postRequest(url, data).
             then(res => {
@@ -126,6 +129,7 @@ Page({
       url: '../order_pay/order_pay?oid=' + oid + '&name=' + name + '&price=' + price
     })
   },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

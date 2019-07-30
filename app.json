@@ -1,5 +1,5 @@
 {
-  "pages": [
+  "pages": [ 
     "pages/order/order",
     "pages/home/home",
     "pages/coupon_use/coupon_use",
@@ -17,7 +17,7 @@
     "pages/map/map",
     "pages/my/my",
     "pages/login/login",
-    
+    "pages/wx_login/wx_login",
     "pages/smoke_list/smoke_list",
     "pages/product_details1/product_details1",
     "pages/product_details2/product_details2",

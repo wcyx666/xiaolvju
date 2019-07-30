@@ -1,4 +1,5 @@
 <!--pages/order/order.wxml-->
+<wxs module="Filter" src="../../filter/filter.wxs"></wxs>
 <view class="order" wx:if="{{ data.length > 0 }}">
   <view class="order_list" wx:for="{{ data }}" data-oid="{{ item.order_oid }}" bindtap='bindTapTo'>
     <view class="order_title">
@@ -20,8 +21,8 @@
       <text>{{ item.user_addree }}{{ item.user_num }}</text>
     </view>
     <view class="order_btn" wx:if="{{ item.order_type === '1' }}">
-      <text class="order_can" catchtap='bindTapCan' data-oid="{{ item.order_oid }}">取消</text>
-      <text class="order_pay" catchtap='bindTapPay' data-oid="{{ item.order_oid }}" data-name="{{ item.comm_type }}" data-price="{{ item.order_price }}">支付</text>
+      <view class="order_can" catchtap='bindTapCan' data-coupon="{{ item.coupon_id  }}" data-oid="{{ item.order_oid }}">取消</view>
+      <view class="order_pay" catchtap='bindTapPay' data-oid="{{ item.order_oid }}" data-name="{{ item.comm_type }}" data-price="{{ item.order_price }}">支付</view>
     </view>
   </view>
 </view>

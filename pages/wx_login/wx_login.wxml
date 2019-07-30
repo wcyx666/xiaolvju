@@ -1,0 +1,15 @@
+<!--pages/wx_login/wx_login.wxml-->
+<view class="wx-login">
+  <view class="log">
+
+  </view>
+  <view class="btn">  
+    <button class="btn1" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+      <image class='btnImg' src='../image/icon_wx_logo.png'></image>
+      <view>微信账号快捷登录</view>
+    </button>
+  </view>
+  <view class="agreement">
+    登录即代表您已同意 <navigator url='../agreement/agreement'>《用户协议》</navigator>
+  </view>
+</view>

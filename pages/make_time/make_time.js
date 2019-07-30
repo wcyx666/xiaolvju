@@ -43,7 +43,7 @@ Page({
       let days = myDate.getDate();
       if (month <= 9) month = "0" + month;
       if (days <= 9) days = "0" + days; 
-      let date = year + "/" + month + "/" + days;
+      let date = year + "-" + month + "-" + days;
       
       let str = "星期" + "日一二三四五六".charAt(myDate.getDay());
       console.log(date)

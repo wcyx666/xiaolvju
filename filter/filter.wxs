@@ -11,10 +11,32 @@ var Filter = {
     var yuan = val / 100.0;
     return yuan.toFixed(2);
   },
+  count: function (val, timeInterval) {
+    var nowTime = getDate();
+    var createdTime = getDate(val);
+    var time = 1000 * 60 * timeInterval;
+    // 目标时间和当前时间的毫秒数
+    var differ = nowTime - createdTime;
+    // 目标时间超过当前时间，或目标时间与当前时间的差超过30分钟则返回0
+    if (differ < 0 || differ > time) {
+      return 1;
+    };
+    // 剩余时间的秒数
+    differ = time - differ;
+    // 计算分钟数
+    var minute = Math.floor(differ / (60 * 1000));
+    minute = minute < 10 ? '0' + minute : minute;
+    // 计算秒数
+    var second = Math.floor((differ - minute * (60 * 1000)) / 1000);
+    second = second < 10 ? '0' + second : second;
+    return second;
+  }
+  
 }
 
 module.exports = {
   toFixed: Filter.toFixed,
   subString: Filter.subString,
   toFixedT: Filter.toFixedT,
+  count: Filter.count,
 }

@@ -10,7 +10,7 @@
   </view>
   <view class="my_info" wx:else>
     <view class="info_phone">
-      <button open-type='getUserInfo' bindgetuserinfo="getUserInfo" size="default" type='primary'>登录</button>
+      <button open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber" size="default" type='primary'>登录</button>
     </view>
     <view class="info_img">
       <image src='../image/user_img.png'></image>
