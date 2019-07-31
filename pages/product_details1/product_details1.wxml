@@ -5,7 +5,7 @@
   </view>
   <view class="details_box">
     <view class="details_scence">
-      <view class="title">使用场景</view>
+      <view class="title">日常保洁<text>干净清新</text></view>
       <view class="content">
         <view class="content_j">
           <view class="content_1">清洁室内表面灰尘，卫生间，厨房</view>
@@ -13,9 +13,34 @@
       </view>
     </view>
     <view class="details_scence">
-      <view class="title">服务范围</view>
+      <view class="title">服务范围<text>全屋清洁，专业高效</text></view>
       <view class="content">
-        <view>彻底清除居室中积累的灰尘、油污、水垢，让您的家焕然一新。对厨卫进行彻底打扫，保护您和家人的健康</view>
+        <view class='content_icon'>
+          <view class="content_icon_img">
+            <image src='../image/icon_keting.png'></image>
+            <view>客厅</view>
+          </view>
+          <view class="content_icon_img">
+            <image src='../image/icon_wc.png'></image>
+            <view>卫生间</view>
+          </view>
+          <view class="content_icon_img">
+            <image src='../image/icon_woshi.png'></image>
+            <view>卧室</view>
+          </view>
+          <view class="content_icon_img">
+            <image src='../image/icon_chufang.png'></image>
+            <view>厨房</view>
+          </view>
+          <view class="content_icon_img">
+            <image src='../image/icon_changting.png'></image>
+            <view>餐厅</view>
+          </view>
+          <view class="content_icon_img">
+            <image src='../image/icon_yangtai.png'></image>
+            <view>阳台</view>
+          </view>
+        </view>
         <view class="content_t">
           <view>温馨提示：</view>
           <view>1、室外玻璃不在清洗范围内</view>

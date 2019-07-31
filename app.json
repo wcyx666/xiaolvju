@@ -1,6 +1,6 @@
 {
   "pages": [ 
-    "pages/order/order",
+    
     "pages/home/home",
     "pages/coupon_use/coupon_use",
     "pages/coupon/coupon",
@@ -9,7 +9,7 @@
     "pages/author_list/author_list",
     "pages/pay_err/pay_err",
     "pages/pay_suc/pay_suc",
-    
+    "pages/order/order",
     "pages/order_pay/order_pay",
     "pages/order_complete/order_complete",
     "pages/order_page/order_page",

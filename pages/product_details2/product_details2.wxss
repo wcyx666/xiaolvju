@@ -4,21 +4,19 @@
   padding: 20rpx;
   box-sizing: border-box;
 }
-.details_scence {
-  border: 1rpx solid #f2f5f7;
-}
 .title {
   box-sizing: border-box;
   width: 100%;
-  line-height: 68rpx;
   font-size: 32rpx;
   padding-left: 20rpx;
+  margin: 20rpx 0;
+  border-left: 10rpx solid #f75c56;
 }
 .content {
   font-size: 28rpx;
   padding: 20rpx;
   color: #333;
-  
+  line-height: 58rpx;
 }
 .content_anquan {
   display: flex;
