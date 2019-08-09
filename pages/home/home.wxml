@@ -38,7 +38,7 @@
         <view class="home_other_content_content">
           <view class="title">{{ item.title }}</view>
           <view class="deilt">{{ item.deilt }}</view>
-          <view class="motny"><text>{{ item.motny }}</text>元起</view>
+          <view class="motny"><text class="p_motny">{{ item.motny }}</text>元<text wx:if="{{ item.typeIp != '3' }}">/平米</text></view>
         </view>
       </view>
     </view>

@@ -25,6 +25,7 @@
         placeholder="请输入小区地址"
         border="{{ false }}"
         bindtap="onChangeCity"
+        readonly="true"
       />
       <van-field
         value="{{ user_num }}"
@@ -61,13 +62,6 @@
         label="商品"
         border="{{ false }}"
         readonly="true"
-        bind:change="onChange"
-      />
-      <van-field
-        value="{{ order_name }}"
-        label="类型"
-        readonly="true"
-        border="{{ false }}"
         bind:change="onChange"
       />
       <van-field

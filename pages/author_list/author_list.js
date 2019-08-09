@@ -18,7 +18,6 @@ Page({
     make_time:"",// 预约时间
     play_way:"0",// 支付方式 默认为0
     order_per:"1200",// 房间平米数
-    order_name:"",// 产品类型
     order_sum_price: '',// 商品原价格
     order_price:'',// 商品原价格
     order_endPrice:"", //商品最终价格
@@ -206,7 +205,6 @@ Page({
       make_date: this.data.make_date,// 预约时间
       make_time: this.data.make_time,// 预约时间
       play_way: this.data.play_way,// 支付方式 默认为0
-      order_name: this.data.order_name,// 商品名称
       order_per: this.data.order_per,// 房间平米数
       order_price: this.data.order_price,// 商品原价
       order_endPrice: this.data.order_endPrice,// 商品原价格
@@ -281,7 +279,6 @@ Page({
       comm_type = '油烟机';
     }
     that.setData({
-      order_name: options.name,
       comm_type: comm_type,
       order_price: price,
       order_per: options.val || '',

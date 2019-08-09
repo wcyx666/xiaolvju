@@ -6,12 +6,12 @@ Page({
    */
   data: {
     deep:[
-      { name: "一居室", price: '120', type: '1', area:"70",src:"../image/icon_fw.png" },
-      { name: "二居1卫", price: '160', type: '2', area: "120", src: "../image/icon_fw.png" },
-      { name: "二居2卫", price: '200', type: '3', area: "150", src: "../image/icon_fw.png" },
-      { name: "三居1卫", price: '240', type: '4', area: "180", src: "../image/icon_fw.png" },
-      { name: "三居2卫", price: '260', type: '5', area: "200", src: "../image/icon_fw.png" },
-      { name: "四居以上", price: '2元/㎡', type: '6', area: "", src: "../image/icon_fw.png" },
+      { name: "一居1卫", price: '180', type: '1', area:"70",src:"../image/icon_fw.png" },
+      { name: "二居1卫", price: '300', type: '2', area: "110", src: "../image/icon_fw.png" },
+      { name: "二居2卫", price: '380', type: '3', area: "140", src: "../image/icon_fw.png" },
+      { name: "三居1卫", price: '380', type: '4', area: "140", src: "../image/icon_fw.png" },
+      { name: "三居2卫", price: '500', type: '5', area: "200", src: "../image/icon_fw.png" },
+      { name: "四居以上", price: '3元/㎡', type: '6', area: "", src: "../image/icon_fw.png" },
     ],
     deep1: [
       { name: "一居室", price: '210', type: '1', area: "70", src: "../image/icon_fw.png" },
@@ -41,31 +41,36 @@ Page({
 
   onChange (e) {
     console.log(e)
-    let price = e.detail*3;
-    console.log(price)
+    let price;
+    if (this.data.order_type == 1) {
+      price = e.detail * 3;
+    } else if (this.data.order_type == 2) {
+      price = e.detail * 4;
+    }
     this.setData({
       order_value: e.detail,
       order_price: price
     })
+    
   },
 
   bindClick () {
     let that = this;
-    //if (that.data.value < 200) {
-    //  wx.showToast({
-    //    icon: 'none',
-    //    title: '房屋面积不能小于200',
-    //  })
-    //  return;
-    //}
-    console.log(that.data.type)
-    if (that.data.type === '') {
+    if (that.data.order_value < 40) {
       wx.showToast({
         icon: 'none',
-        title: '请选择房屋类型',
+        title: '房屋面积不能小于40',
       })
       return;
     }
+    console.log(that.data.type)
+    //if (that.data.type === '') {
+    //  wx.showToast({
+    //    icon: 'none',
+    //    title: '请选择房屋类型',
+    //  })
+    //  return;
+    //}
     console.log(that.data.order_value)
     if (that.data.order_value === '' ) {
       wx.showToast({
@@ -73,9 +78,8 @@ Page({
         title: '请输入房屋面积',
       })
       return;
-    }
-    
-    wx.navigateTo({      url: '../author_list/author_list?price=' + that.data.order_price + '&name=' + that.data.order_name + '&val=' + that.data.order_value + '&type=' + that.data.order_type,
+    }  
+    wx.navigateTo({url: '../author_list/author_list?price=' + that.data.order_price + '&name=' + that.data.order_name + '&val=' + that.data.order_value + '&type=' + that.data.order_type,
     })
   },
 

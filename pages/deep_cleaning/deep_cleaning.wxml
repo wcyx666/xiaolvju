@@ -1,6 +1,6 @@
 <!--pages/deep_cleaning/deep_cleaning.wxml-->
 <view class="deep">
-  <view class="meter_title">
+  <!--<view class="meter_title">
     房屋类型
   </view>
   <view class="deep_list" wx:if="{{ order_type == 1 }}">
@@ -16,8 +16,8 @@
       <view class="area">上限{{ item.area }}㎡</view>
       <view class="price">￥{{ item.price }}</view>
     </view>
-  </view>
-  <view class="meter" wx:if="{{ type == 5 }}">
+  </view>-->
+  <view class="meter">
     <view class="meter_title">
       房屋面积
     </view>
@@ -32,13 +32,29 @@
       />
     </van-cell-group>
   </view>
+  <view class="meter">
+    <view class="meter_title">
+      总价钱
+    </view>
+    <van-cell-group>
+      <van-field
+        value="{{ order_price }}"
+        label="价钱"
+        type="number"
+        placeholder="房屋面积×价格"
+        border="{{ false }}"
+        readonly="true"
+      />
+    </van-cell-group>
+  </view>
   <view class="notice">
     <view class="notice_title">
       温馨提示
     </view>
     <view class="notice_txt">
-      <view>1.实际费用按照输入面积6元-10元/平米收取费用</view>
+      <view>1.实际费用按照输入面积3元-4元/平米收取费用</view>
       <view>2.提及面积均指建筑面积（不包括公摊面积），该面积含购房赠送面积</view>
+      <view>3.请准确输入房屋面积（不包括公摊面积），保洁人员会进行测量</view>
     </view>
   </view>
   

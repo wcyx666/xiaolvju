@@ -45,6 +45,7 @@
 .meter_title {
   font-size: 32rpx;
   padding-bottom: 30rpx;
+  padding-top: 30rpx;
 }
 .notice {
   font-size: 26rpx;

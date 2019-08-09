@@ -23,14 +23,14 @@ Page({
         img:"../image/img2.png",
         title:"日常保洁",
         deilt:"提供家庭室内表面清洁服务",
-        motny:80
+        motny:3
       },
       {
         typeIp: "2",
         img: "../image/img4.png",
         title: "深度保洁",
         deilt: "提供新房、长久未打扫家庭室内深度清洁服务",
-        motny: 150
+        motny: 4
       },
       {
         typeIp: "3",
