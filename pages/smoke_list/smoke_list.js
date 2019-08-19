@@ -7,8 +7,8 @@ Page({
   data: {
     type:"s",
     deep: [
-      { name: "油烟机", price: '100', type: '2938', src: "../image/IMG_2938.png" },
-      { name: "油烟机+灶台", price: '120', type: '2939',src: "../image/IMG_2939.png" }
+      { name: "油烟机", price: '100', type: '2938', src: "../image/icon_youyanji.png" },
+      { name: "油烟机+灶台", price: '120', type: '2939', src: "../image/icon_youyanji_s.png" }
     ],
     order_price: "", // 产品价格
     order_name: "",// 产品名称

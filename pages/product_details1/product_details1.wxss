@@ -79,7 +79,7 @@
   line-height: 80rpx;
   font-size: 32rpx;
   color: #fff;
-  background:#76aef8;
+  background:#f75c56;
 }
 .phone {
   width: 100%;

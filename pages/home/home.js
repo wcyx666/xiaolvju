@@ -41,7 +41,7 @@ Page({
       }
     ],
     user_id:"",
-    
+    userTotal:"", //用户数量
   },
 
   /**
@@ -49,6 +49,7 @@ Page({
    */
   onLoad: function (options) {
     let that = this;
+    that.getTotal();
     wx.getStorage({
       key: 'openid',
       success: function(res) {
@@ -57,6 +58,22 @@ Page({
         })
       },
     })
+  },
+  getTotal () {
+    let that = this;
+    let url = Url.test + "/users/ready";
+    Http.postRequest(url).
+      then(res => {
+        console.log(res)
+        that.setData({
+          userTotal:res.data.total
+        })
+      }).catch((erorr) => {
+        console.log(erorr)
+      })
+      .finally(function (res) {
+        console.log(res)
+      })
   },
 
   /**
