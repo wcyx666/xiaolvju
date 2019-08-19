@@ -14,10 +14,22 @@ Page({
     currentIndex:0,
     currentTimeIndex: '',
     timeArr: [
-      { "make_time": "08:00-10:00", 'make_num': "0" },
-      { "make_time": "10:00-12:00", 'make_num': "0" },
-      { "make_time": "13:00-15:00", 'make_num': "0" },
-      { "make_time": "15:00-17:00", 'make_num': "0" }
+      { "make_time": "08:00", 'make_num': "0" },
+      { "make_time": "08:30", 'make_num': "0" },
+      { "make_time": "09:00", 'make_num': "0" },
+      { "make_time": "09:30", 'make_num': "0" },
+      { "make_time": "10:00", 'make_num': "0" },
+      { "make_time": "10:30", 'make_num': "0" },
+      { "make_time": "11:00", 'make_num': "0" },
+      { "make_time": "13:00", 'make_num': "0" },
+      { "make_time": "13:30", 'make_num': "0" },
+      { "make_time": "14:00", 'make_num': "0" },
+      { "make_time": "14:30", 'make_num': "0" },
+      { "make_time": "15:00", 'make_num': "0" },
+      { "make_time": "15:30", 'make_num': "0" },
+      { "make_time": "16:00", 'make_num': "0" },
+      { "make_time": "16:30", 'make_num': "0" },
+      { "make_time": "17:00", 'make_num': "0" }
     ]
   },
 

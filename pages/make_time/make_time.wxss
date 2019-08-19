@@ -24,13 +24,13 @@ scroll-view .listItem text{
   display: block;
 }
 scroll-view .listItem .name{
-  font-size: 21rpx;
+  font-size: 32rpx;
 }
 scroll-view .listItem .date{
-  font-size: 21rpx;
+  font-size: 30rpx;
 }
 scroll-view .current{
-  background-color: #76aef8;
+  background-color: #f75c56;
 
 }
 scroll-view .current text{
@@ -42,23 +42,22 @@ scroll-view .current text{
   justify-content: flex-start;
   margin: 0 auto;
   margin-top: 30rpx;
-  display: flex;
 }
 .time .listItem{
-  flex: 1;
+  width: 20%;
+  float: left;
   text-align: center;
-  box-sizing: border-box;
-  background-color: #fff;
+  font-size: 30rpx;
 }
 .time .listItem text{
   display: block;
-  font-size: 21rpx;
+  font-size: 30rpx;
 }
 .time .current{
-  border: 1px solid #76aef8;
+  border: 1px solid #f75c56;
 }
 .time .current text{
-  color: #76aef8;
+  color: #f75c56;
 }
 .operate button{
   width:300rpx;
@@ -109,7 +108,7 @@ scroll-view .current text{
   line-height: 80rpx;
   font-size: 28rpx;
   color: #fff;
-  background: #76aef8;
+  background: #f75c56;
 }
 .time_list {
   padding: 30rpx 0;
